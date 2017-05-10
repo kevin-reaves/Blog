@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
-    <h1>You're Home!</h1>
+    <h1>Welcome to the blog!</h1>
+
+    {% for post in posts.all %}
+
+        {{ post.title }}
+        <br/>
+        {{ post.pub_date }}
+        <br/>
+        {{ post.body|safe }}
+    {% endfor %}
+
 </head>
 <body>
 
