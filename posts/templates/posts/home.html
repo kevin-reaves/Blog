@@ -7,11 +7,11 @@
 
     {% for post in posts.all %}
 
-        {{ post.title }}
+        <a href = "{% url 'post_detail' post.id %}">{{ post.title }}</a>
         <br/>
         {{ post.pub_date }}
         <br/>
-        {{ post.body|safe }}
+        <img src="{{ post.image.url }}"/>
     {% endfor %}
 
 </head>

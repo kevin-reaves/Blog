@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {{ post.title }}
+    <br/>
+    {{ post.pub_date }}
+    <br/>
+    <img src="{{ post.image.url }}"/>
+    <br/>
+    <br/>
+
+    {{ post.body|safe }}
+</head>
+<body>
+
+</body>
+</html>
