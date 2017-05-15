@@ -5,6 +5,10 @@
     <title>Homepage</title>
     <h1>Welcome to the blog!</h1>
 
+
+</head>
+<body>
+
     {% for post in posts.all %}
 
         <a href = "{% url 'post_detail' post.id %}">{{ post.title }}</a>
@@ -13,9 +17,6 @@
         <br/>
         <img src="{{ post.image.url }}"/>
     {% endfor %}
-
-</head>
-<body>
 
 </body>
 </html>
