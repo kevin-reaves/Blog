@@ -10,7 +10,7 @@
 <body>
 
     {% for post in posts.all %}
-
+    {% csrf_token %}
         <a href = "{% url 'post_detail' post.id %}">{{ post.title }}</a>
         <br/>
         {{ post.pub_date }}
