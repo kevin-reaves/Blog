@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create A Post</title>
+    {% csrf_token %}
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=iwp2863qahp4n3t11i4l4jczieyaq3249d88in2s1fv2bn9p"></script>
+
+
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
+
+</head>
+<body>
+
+{% if error %}
+{{ error }}
+{% endif %}
+
+<h1>Create A POST</h1>
+
+{% load static %}
+<form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+
+    <p>Title:</p>
+    <input type="text" name="title"/>
+    <br/>
+    <p>Image:</p>
+    <input type="file" name="image"/>
+    <br/>
+    <p>Body:</p>
+    <textarea id="mytextarea" name="body"></textarea>
+    <br/>
+
+    <input type="submit" value="submit" name="submit" />
+</form>
+</body>
+</html>

@@ -13,9 +13,11 @@
     {% csrf_token %}
         <a href = "{% url 'post_detail' post.id %}">{{ post.title }}</a>
         <br/>
-        {{ post.pub_date }}
+        {{ post.pub_date }} by {{ post.author }}
         <br/>
         <img src="{{ post.image.url }}"/>
+
+        <br/><br/>
     {% endfor %}
 
 </body>

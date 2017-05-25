@@ -124,5 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # determines the url of the image, doesn't create a pics folder
-MEDIA_URL = '/pics/'
-MEDIA_ROOT = BASE_DIR
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = ''
