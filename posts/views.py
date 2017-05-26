@@ -23,7 +23,7 @@ def create(request):
             post = Post()
             post.title = request.POST['title']
             post.pub_date = timezone.datetime.now()
-            post.image = request.POST['image']
+            post.image = request.FILES['image']
             post.body = request.POST['body']
             post.author = request.user
             post.save()
