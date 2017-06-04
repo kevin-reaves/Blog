@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <li><a href = "{% url 'home' %}"> Go Home </a></li>
+
+    {% if user.is_authenticated %}
+
+    <li><a href="#" onClick="document.getElementById('logout').submit()">Logout</a></li>
+    <form method = "POST" action= "{% url 'logmeout' %}" id="logout" >
+    {% csrf_token %}
+    <input type="hidden">
+    </form>
+
+    <li><a href="{% url 'create' %}">Submit a Post</a></li>
+    {% else %}
+
+    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+    <li><a href="{% url 'logmein' %}">Log In</a></li>
+
+    {% endif %}
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

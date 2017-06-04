@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     url(r'^signup/', views.signup, name="signup"),
     url(r'^login/', views.logmein, name="logmein"),
+    url(r'^logout/', views.logmeout, name="logmeout"),
     ]

@@ -8,7 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     pub_date = models.DateTimeField()
     author = models.ForeignKey(User, db_column="user", default=1)
-    image = models.FileField(upload_to='media', blank=True)
+    image = models.FileField(upload_to='media', blank=True, default="media/defaultBlogImage.png")
     body = HTMLField()
 
     def __str__(self):

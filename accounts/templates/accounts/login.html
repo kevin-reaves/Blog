@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +33,9 @@
     <br/>
     <input type="submit" value="login" name="login" />
 
-    <br/><br/>
-    <a href = "{% url 'signup' %}"> Sign Up </a>
-
 </form>
 
 </body>
 </html>
+
+{% endblock %}

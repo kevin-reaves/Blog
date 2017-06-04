@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +25,7 @@
 {{ error }}
 {% endif %}
 
-<h1>Create A POST</h1>
+<h1>Create A Post</h1>
 
 {% load static %}
 <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
@@ -31,6 +35,7 @@
     <input type="text" name="title"/>
     <br/>
     <p>Image:</p>
+    <p>Note: This field is optional. If you don't submit an image, a generic image will be used instead.</p>
     <input type="file" name="image"/>
     <br/>
     <p>Body:</p>
@@ -41,3 +46,5 @@
 </form>
 </body>
 </html>
+
+{% endblock %}

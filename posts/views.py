@@ -23,7 +23,12 @@ def create(request):
             post = Post()
             post.title = request.POST['title']
             post.pub_date = timezone.datetime.now()
-            post.image = request.FILES['image']
+
+            #allows the user to ignore submitting an image
+            #models.py contains a default, that will be used
+            if request.POST['image']:
+                post.image = request.FILES['image']
+
             post.body = request.POST['body']
             post.author = request.user
             post.save()
