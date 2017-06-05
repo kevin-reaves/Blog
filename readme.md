@@ -7,3 +7,4 @@ The main functionality of the site is now complete. I will begin to use javascri
 
 6/4/2017
 Added logout button, moved login/logout/home buttons to navbar.
+Added bootstrap, renamed images on upload
