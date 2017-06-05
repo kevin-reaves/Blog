@@ -7,7 +7,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
-    <h1>Welcome to the blog!</h1>
 
 
 </head>
@@ -19,7 +18,7 @@
         <br/>
         {{ post.pub_date }} by {{ post.author }}
         <br/>
-        <img src="{{ post.image.url }}"/>
+        <img class="blogImage" src="{{ post.image.url }}"/>
 
         <br/><br/>
     {% endfor %}

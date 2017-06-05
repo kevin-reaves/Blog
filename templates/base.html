@@ -1,30 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <li><a href = "{% url 'home' %}"> Go Home </a></li>
+    <meta name="author" content="Kevin Reaves">
 
-    {% if user.is_authenticated %}
+    <title>KR Software</title>
 
-    <li><a href="#" onClick="document.getElementById('logout').submit()">Logout</a></li>
-    <form method = "POST" action= "{% url 'logmeout' %}" id="logout" >
-    {% csrf_token %}
-    <input type="hidden">
-    </form>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/blog/blog.css' %}">
 
-    <li><a href="{% url 'create' %}">Submit a Post</a></li>
-    {% else %}
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-    <li><a href="{% url 'logmein' %}">Log In</a></li>
+     <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">KR Software</a>
+        </div>
 
-    {% endif %}
+        <ul class="nav navbar-nav">
+          <li><a href = "{% url 'home' %}">Home</a></li>>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+
+            {% if user.is_authenticated %}
+            <li><a href="#" onClick="document.getElementById('logout').submit()">Logout</a>
+            <form id="logout" method="POST" action="{% url 'logmeout' %}">
+              {% csrf_token %}
+              <input type="hidden">
+            </form>
+            </li>
+
+                <li><a href="{% url 'create' %}">Submit a Post</a></li>
+            {% else %}
+
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'logmein' %}">Log In</a></li>
+
+            {% endif %}
+
+        </ul>
+      </div>
+    </nav>
+
 </head>
+
 <body>
 
-{% block content %}
-{% endblock %}
+    <div class="centerMe">
+    <!-- Note: create has a seperate id that overrides horizontal centering done here-->
+    {% block content %}
+    {% endblock %}
+    </div>
 
 </body>
+
+<footer>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</footer>
 </html>

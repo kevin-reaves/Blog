@@ -1,0 +1,17 @@
+.centerMe{
+	margin-left: 10%;
+	margin-right: 10%;
+    text-align:center;
+    padding-top: 5%;
+}
+
+#overridesBase{
+    text-align:left;
+}
+
+img.blogImage {
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
+}

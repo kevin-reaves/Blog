@@ -3,6 +3,7 @@ from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.views.generic.edit import CreateView, UpdateView
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 # Create your views here.
@@ -24,10 +25,12 @@ def create(request):
             post.title = request.POST['title']
             post.pub_date = timezone.datetime.now()
 
-            #allows the user to ignore submitting an image
+            #ignores the error from not submitting an image
             #models.py contains a default, that will be used
-            if request.POST['image']:
+            try:
                 post.image = request.FILES['image']
+            except MultiValueDictKeyError:
+                pass
 
             post.body = request.POST['body']
             post.author = request.user
