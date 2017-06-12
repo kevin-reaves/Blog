@@ -14,13 +14,15 @@
 
     {% for post in posts.all %}
     {% csrf_token %}
+        <div class="Post">
         <a href = "{% url 'post_detail' post.id %}">{{ post.title }}</a>
         <br/>
         {{ post.pub_date }} by {{ post.author }}
         <br/>
         <img class="blogImage" src="{{ post.image.url }}"/>
-
+        </div>
         <br/><br/>
+
     {% endfor %}
 
 </body>

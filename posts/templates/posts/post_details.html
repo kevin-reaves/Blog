@@ -10,8 +10,7 @@
     <title>{{ post.title }}</title>
 </head>
 <body>
-    <br/>
-    <br/>
+    <div class="Post">
     {{ post.title }}
     <br/>
     {{ post.pub_date }} by {{ post.author }}
@@ -21,6 +20,8 @@
     <br/>
 
     {{ post.body|safe }}
+        <br/><br/>
+    </div>
 
 </body>
 </html>
