@@ -8,13 +8,20 @@
 .Post{
     background-color: #e6f3ff;
     color: #0d0d0d;
-    border-radius: 40px;
-    padding-top: 20px;
-    padding-bottom:20px;
+    border-radius: 2em;
+    padding-top: 1em;
+    padding-bottom:1em;
 }
 
 .errorMessage{
     color: red;
+    padding-bottom:3em;
+}
+
+.about{
+    text-align:center;
+    font-size:1.5em;
+    padding-bottom:3em;
 }
 
 .navbar-inverse .navbar-nav>li>a{
@@ -32,6 +39,6 @@
 img.blogImage {
     height: auto;
     width: auto;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 12em;
+    max-height: 12em;
 }

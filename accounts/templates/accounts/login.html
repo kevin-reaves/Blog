@@ -12,9 +12,13 @@
 <body>
 
 
+<div class="errorMessage">
+
 {% if error %}
 {{ error }}
 {% endif %}
+
+</div>
 
 <form action="{% url 'logmein' %}" method="POST">
     {% csrf_token %}

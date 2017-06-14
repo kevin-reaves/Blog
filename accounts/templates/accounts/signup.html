@@ -11,9 +11,13 @@
 <body>
 
 
+<div class="errorMessage">
+
 {% if error %}
 {{ error }}
 {% endif %}
+
+</div>
 
 <form action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
