@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+</head>
+
+<body>
+
+
+
+<div class="about">
+    <h1>About Kevin</h1>
+    <br/><br/><br/>
+
+
+
+    <p>My name is Kevin Reaves and I'm a web developer. I graduated from Troy University
+        in May 2016 and I've been working as a configuration management specialist
+        for CGI's Advantage project since then.</p>
+    <br/>
+    <p>I've always enjoyed the long, and sometimes frustrating, process of solving problems.
+        Between solving problems and a natural love of fancy electronic toys,
+        writing software seemed like a natural choice.</p>
+    <br/>
+
+    <p>I've included a link to my resume below. I look forward to hearing from you!</p>
+    <br/>
+
+    <a href="{% static '/resume/Kevin_Reaves_Resume.docx' %}" class="btn btn-info" role="button">Download my resume</a>
+
+
+</div><!--centerMe-->
+
+</body>
+</html>
+
+{% endblock %}
+
+

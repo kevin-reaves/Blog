@@ -14,3 +14,8 @@ The website is now live on http://kreaves.pythonanywhere.com/
 
 After a bit of trouble with getting gitignore to work, the updated secret key is no longer visible.
 The database and image cache will reset every night, mostly to avoid space/inappropriate content issues.
+
+6/14/2017
+Added "About Me" section
+
+Fixed error when leaving sign up fields empty
