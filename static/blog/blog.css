@@ -3,6 +3,7 @@
 	margin-right: 25%;
     text-align:center;
     padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .Post{
@@ -37,8 +38,8 @@
 }
 
 img.blogImage {
-    height: auto;
-    width: auto;
+    height: 95%;
+    width: 95%;
     max-width: 12em;
     max-height: 12em;
 }
