@@ -13,6 +13,9 @@ def home(request):
 
     return render(request, 'posts/home.html', {'posts':posts})
 
+def about(request):
+    return render(request, 'posts/about.html')
+
 def post_details(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     return render(request, 'posts/post_details.html', {'post':post})
@@ -36,5 +39,9 @@ def create(request):
             post.author = request.user
             post.save()
             return redirect('home')
+        else:
+            #If the user didn't include a title or body
+            return render(request, 'posts/create.html',
+                          {'error': 'Error: You must include a title and a body to create a post.'})
     else:
         return render(request, 'posts/create.html')
