@@ -6,18 +6,19 @@
 }
 
 .Post{
-    background-color: #f2f2f2;
+    background-color: #e6f3ff;
     color: #0d0d0d;
     border-radius: 40px;
     padding-top: 20px;
+    padding-bottom:20px;
 }
 
 .navbar-inverse .navbar-nav>li>a{
-    color:  #b3d9ff;
+    color:  #e6f3ff;
 }
 
 .navbar-inverse .navbar-brand{
-    color: #b3d9ff;
+    color: #e6f3ff;
 }
 
 #overridesBase{
