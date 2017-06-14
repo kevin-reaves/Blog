@@ -19,11 +19,14 @@
     </script>
 
 </head>
-<div>
+
+<div class="errorMessage">
 
 {% if error %}
 {{ error }}
 {% endif %}
+
+</div>
 
 <div id="overridesBase">
     <form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}

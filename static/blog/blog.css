@@ -13,6 +13,10 @@
     padding-bottom:20px;
 }
 
+.errorMessage{
+    color: red;
+}
+
 .navbar-inverse .navbar-nav>li>a{
     color:  #e6f3ff;
 }
