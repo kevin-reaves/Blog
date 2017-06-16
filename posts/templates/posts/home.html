@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -19,7 +19,11 @@
         <br/>
         {{ post.pub_date }} by {{ post.author }}
         <br/>
-        <img class="blogImage" src="{{ post.image.url }}"/>
+
+        <!-- Using alternate images is a temporary solution while I troubleshoot
+            issues with ImageField not filtering non-image files.-->
+        <img class="blogImage" src="{{ post.image.url }}"
+             onerror="this.src='/media/media/defaultBlogImage.png';"/>
         </div>
         <br/><br/>
 
