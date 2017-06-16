@@ -19,3 +19,7 @@ The database and image cache will reset every night, mostly to avoid space/inapp
 Added "About Me" section
 
 Fixed error when leaving sign up fields empty
+
+6/15/2017
+
+Resolved issues with non-image uploads not displaying. Currently troubleshooting an issue with ImageField filtering.
