@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.views.generic.edit import CreateView, UpdateView
 from django.utils.datastructures import MultiValueDictKeyError
+import os
 
 
 # Create your views here.
@@ -32,6 +32,16 @@ def create(request):
             #models.py contains a default, that will be used
             try:
                 post.image = request.FILES['image']
+
+                #ImageField filtering wasn't working, so I had to filter it here
+                filename, file_extension = os.path.splitext(post.image.name)
+                acceptedFiletypes = ['.gif', '.jpeg', '.jpg', '.png', '.svg', '.bmp']
+                #Uppercase extensions are valid
+                if file_extension.lower() not in acceptedFiletypes:
+                    return render(request, 'posts/create.html',
+                                  {'error': 'Error: Please submit an image file.'})
+
+
             except MultiValueDictKeyError:
                 pass
 

@@ -23,3 +23,7 @@ Fixed error when leaving sign up fields empty
 6/15/2017
 
 Resolved issues with non-image uploads not displaying. Currently troubleshooting an issue with ImageField filtering.
+
+6/18/2017
+
+Issue with ImageField resolved, checked in views.py

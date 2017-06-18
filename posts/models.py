@@ -27,6 +27,6 @@ class Post(models.Model):
     pub_date = models.DateTimeField()
     author = models.ForeignKey(User, db_column="user", default=1)
     #ImageField is currently not filtering non-images like it should.
-    #A temporary band aid has been applied on the HTML side.
+    #Filtering done in views.py
     image = models.ImageField(upload_to=get_upload_to, blank=True, default="media/defaultBlogImage.png")
     body = HTMLField()
