@@ -43,3 +43,10 @@ img.blogImage {
     max-width: 12em;
     max-height: 12em;
 }
+
+img.detailImage {
+    height: 95%;
+    width: 95%;
+    max-width: 24em;
+    max-height: 24em;
+}
